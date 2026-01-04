@@ -1,0 +1,111 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial
+scale=1.0"> 
+<title>My Goals as a Student</title> 
+<link rel="stylesheet" href="style2.css"> 
+</head> 
+<body> 
+<header> 
+<h1>Welcome to My Personal Website</h1> 
+</header> 
+<nav> 
+<ul> 
+<li><a href="index.html">HOME</a></li> 
+<li class="dropdown"> 
+<a href="#" class="dropbtn">ABOUT</a> 
+<div class="dropdown-content"> 
+<a href="skills.html">Skills I'm Developing</a> 
+<a href="goals.html">My Goals as a Student</a> 
+<a href="funfacts.html">Fun Facts About Me</a> 
+</div> 
+</li> 
+<li><a href="gallery.html">GALLERY</a></li> 
+<li><a href="contact.html">CONTACT</a></li> 
+<a href="javascript:void(0);" class="logout-button" 
+onclick="confirmLogout()">LOG OUT</a> 
+</ul> 
+</nav> 
+<section id="section2"></section> 
+<section id="drop"> 
+<h2>My Goals as a Student</h2> 
+<p style="text-align: center;">Here are the aspirations I’m 
+passionately pursuing!</p> 
+<div class="goal-grid"> 
+<div class="goal-card" onclick="toggleGoalDetails(1)"> 
+<div class="goal-header" style="background-color: 
+#6a1b9a;"><strong>Short-Term Goals</strong></div> 
+<p><strong>Improve my grades in my key subjects. 
+</strong></p> 
+<div class="goal-details" id="goal1-details"> 
+<p>Develop a consistent study routine (at least 1–2 hours daily).
+Become more organized with schoolwork using planners or digital tools.</p> 
+</div> 
+</div> 
+<div class="goal-card" onclick="toggleGoalDetails(1)"> 
+<div class="goal-header" style="background-color: 
+#0288d1;"><strong>Long-Term Goals</strong></div> 
+<p>Gain deeper mastery in subjects related to my chosen field.</p> 
+<div class="goal-details" id="goal2-details"> 
+<p>Join organizations or clubs that can help in skill development.</p></p> 
+</div> 
+</div> 
+<div class="goal-card" onclick="toggleGoalDetails(2)"> 
+<div class="goal-header" style="background-color: 
+#ffb300;"><strong>Personal Development</strong></div> 
+<p>Improve self-confidence and communication skills.</p> 
+<div class="goal-details" id="goal3-details"> 
+<p>Develop emotional resilience and a positive mindset.</p> 
+</div> 
+</div> 
+<div class="goal-card" onclick="toggleGoalDetails(2)"> 
+<div class="goal-header" style="background-color: 
+#e53935;"><strong>Career Goals</strong></div> 
+<p>Discover a career path that matches my interests and strengths. </p> 
+<div class="goal-details" id="goal4-details"> 
+<p>Develop professional skills like teamwork, leadership, problem-solving, and digital literacy.
+</p> 
+</div> 
+</div> 
+</div> 
+</section> 
+</section> 
+<footer> 
+<p>&copy; 2024 Your Name. All rights reserved.</p> 
+</footer> 
+<div class="footer-divider"></div> <!-- Orange line --> 
+<!-- Embedded JavaScript --> 
+<script> 
+// Function to toggle details for both cards in a row 
+function toggleGoalDetails(group) { 
+const details1 = document.getElementById('goal' + (group * 2 - 
+1) + '-details'); 
+const details2 = document.getElementById('goal' + (group * 2) 
++ '-details'); 
+// Toggle visibility for the paired goals 
+details1.classList.toggle('active'); 
+details2.classList.toggle('active'); 
+} 
+</script> 
+<script> 
+// Logout function with confirmation 
+function confirmLogout() { 
+// Show a confirmation message to the user 
+const confirmLogout = confirm("Are you sure you want to log out?"); 
+// If the user confirms, proceed with logging out 
+if (confirmLogout) { 
+// Mark the user as logged out in localStorage (if used) 
+localStorage.removeItem('isLoggedIn'); // Or any other keys related to login credentials 
+// Redirect to the login page 
+window.location.href = 'login.html'; 
+} else { 
+// If the user cancels, do nothing 
+return; 
+} 
+} 
+</script> 
+</body> 
+</html>
